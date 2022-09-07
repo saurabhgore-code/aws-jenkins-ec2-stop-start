@@ -1,0 +1,13 @@
+pipeline {
+	agent any
+    environment {
+		AWS_CREDENTIALS=credentials('aws_keys')
+	}
+    stages
+	{	
+	stage('stop instance')
+		{
+			steps{	
+	 sh 'aws ec2 start-instances --instance-ids i-01de8b5c6162d90c4'
+			}
+		}
