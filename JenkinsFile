@@ -11,3 +11,5 @@ pipeline {
 	 sh 'aws ec2 start-instances --instance-ids i-01de8b5c6162d90c4'
 			}
 		}
+	}
+}
