@@ -4,7 +4,20 @@ pipeline {
 		AWS_CREDENTIALS=credentials('aws_keys')
 	}
     stages
-	{	
+	{
+	 stage('install cli')
+	 {
+	     steps{ 
+	     sh 'apt-get install awscli'
+	     }
+	  }
+	  
+	  stage('connect to cli')
+	  {   
+	      steps{
+	      sh 'aws configure'
+	      }
+	  }
 	stage('start instance')
 		{
 			steps{	
