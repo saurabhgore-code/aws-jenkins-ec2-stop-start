@@ -5,10 +5,10 @@ pipeline {
 	}
     stages
 	{	
-	stage('stop instance')
+	stage('start instance')
 		{
 			steps{	
-	 sh 'aws ec2 stop-instances --instance-ids i-01de8b5c6162d90c4'
+	 sh 'aws ec2 start-instances --instance-ids i-01de8b5c6162d90c4'
 			}
 		}
 	}
