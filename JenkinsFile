@@ -8,7 +8,7 @@ pipeline{
                        credentialsId: 'aws-keys',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-                sh 'aws ec2 start-instances --instance-ids i-01de8b5c6162d90c4 --region=us-east-2'
+                sh 'aws s3 mb s3://ramesh.kumar --region=us-east-2'
                       }
               }
           }
