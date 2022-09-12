@@ -8,7 +8,7 @@ pipeline{
                        credentialsId: 'aws-keys',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-                sh 'aws s3 mb s3://ramesh.kumar --region=us-east-2'
+                sh ' aws s3 cp s3://vijay.singh/Clear-Trial-Payslip-May.pdf s3://sagore.singh/Clear-Trial-Payslip-May.pdf --region=us-east-2'
                       }
               }
           }
