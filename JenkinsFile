@@ -8,14 +8,7 @@ pipeline{
                        credentialsId: 'aws-keys',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ 
-                      script {
-                    if (InstanceName = 'control-machine') {
-                        aws ec2 start-instances --instance-ids $InstanceID
-                          echo Instance $InstanceID Started
-                    } elif (InstanceName = 'control-machine'){
-                     aws ec2 stop-instances --instance-ids $InstanceID
-                         echo Instance $InstanceID Stopped
-                    }
+                      sh 'aws s3 cp s3://vijay.singh/Clear-Trial-Payslip-May.pdf s3://sagore.singh/Clear-Trial-Payslip-May.pdf'
                   }
               }
           }
