@@ -7,7 +7,8 @@ pipeline{
                       $class: 'AmazonWebServicesCredentialsBinding',
                        credentialsId: 'aws-keys',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                      secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ script {
+                      secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ 
+                      script {
                     if (InstanceName = 'control-machine') {
                         aws ec2 start-instances --instance-ids $InstanceID
                           echo Instance $InstanceID Started
@@ -15,7 +16,7 @@ pipeline{
                      aws ec2 stop-instances --instance-ids $InstanceID
                          echo Instance $InstanceID Stopped
                     }
-                     }
+                  }
               }
           }
       }
