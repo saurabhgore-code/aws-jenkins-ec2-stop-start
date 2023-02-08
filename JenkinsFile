@@ -8,7 +8,7 @@ pipeline{
                        credentialsId: 'aws-keys',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ 
-                      sh 'aws ec2 stop-instances --instance-ids i-08ec719a3adf5f9d9'
+                      sh 'aws ec2 start-instances --instance-ids $instance-id'
                   }
               }
           }
