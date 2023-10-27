@@ -2,7 +2,7 @@ pipeline{
     agent any
       stages{
           stage("Start instances"){
-              steps{
+              steps
                 //  withCredentials([[
                  //     $class: 'AmazonWebServicesCredentialsBinding',
                  //   credentialsId: 'aws-keys',
@@ -11,7 +11,7 @@ pipeline{
                       sh 'aws ec2 start-instances --instance-ids $InstanceId --region=us-east-1'
                     }
               }
-           }
+           
       //  stage("Stop instances"){
         //      steps{
         //sh 'aws ec2 stop-instances --instance-ids $InstanceId --region=us-east-1'
