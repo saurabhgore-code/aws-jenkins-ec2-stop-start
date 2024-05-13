@@ -13,11 +13,11 @@ pipeline{
               }
 }
            
-      /* stage("Stop instances"){
+       stage("Stop instances"){
               steps{
         sh 'aws ec2 stop-instances --instance-ids $InstanceId --region=us-east-1'
         }
      }
-     */
+     
       }
 }
